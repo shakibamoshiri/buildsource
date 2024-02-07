@@ -2,6 +2,10 @@
 
 set -ex
 
+### install
+apt-get update -y
+apt-get install -y vnstat
+
 ### download 
 # wget https://humdi.net/vnstat/vnstat-latest.tar.gz
 wget https://github.com/vergoh/vnstat/releases/download/v2.12/vnstat-2.12.tar.gz
@@ -13,8 +17,9 @@ apt-get install -y libgd-dev
 apt-get install -y libsqlite3-dev
 
 ### build
-./configure --prefix=/usr --sysconfdir=/etc && make
+./configure --prefix=/usr --sysconfdir=/etc
+make
+make install
 
 ### check
-ls -la
-
+systemctl restart vnstat
