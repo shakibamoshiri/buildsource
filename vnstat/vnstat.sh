@@ -4,6 +4,7 @@ set -ex
 
 ### install
 apt-get update -y
+apt-get install -y build-essential
 apt-get install -y vnstat
 
 ### download 
