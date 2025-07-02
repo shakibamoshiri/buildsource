@@ -9,7 +9,7 @@ apt-get install -y vnstat
 
 ### download 
 # wget https://humdi.net/vnstat/vnstat-latest.tar.gz
-wget https://github.com/vergoh/vnstat/releases/download/v2.12/vnstat-2.12.tar.gz
+wget -c https://github.com/vergoh/vnstat/releases/download/v2.12/vnstat-2.12.tar.gz
 tar zxvf vnstat-2.12.tar.gz
 cd vnstat-2.12
 
