@@ -26,7 +26,8 @@ apt-get -o Acquire::ForceIPv4=true install -y cloudflare-warp
 systemctl disable warp-svc
 
 ### exclude all
-warp-cli add-excluded-route 0.0.0.0/0
+# warp-cli add-excluded-route 0.0.0.0/0
+warp-cli tunnel ip add-range 0.0.0.0/0
 
 ### set protocol
 # warp-cli set-mode warp
