@@ -22,17 +22,23 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyr
 apt-get -o Acquire::ForceIPv4=true update -y
 apt-get -o Acquire::ForceIPv4=true install -y cloudflare-warp
 
-### make an account
-warp-cli register
-
-### set warp
-warp-cli set-mode warp
+### disable the service
+systemctl disable wrap-svc
 
 ### exclude all
 warp-cli add-excluded-route 0.0.0.0/0
 
+### set protocol
+# warp-cli set-mode warp
+warp-cli tunnel protocol set MASQUE
+
 ### show settings
 warp-cli settings
 
-### set license
-# warp-cli set-license <license>
+### make an account
+# warp-cli register
+echo try: warp-cli registration new
+
+### connect
+# warp-cli connect
+echo try: warp-cli connect
