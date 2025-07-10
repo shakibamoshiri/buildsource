@@ -11,6 +11,9 @@ set -ex
 # modprobe wireguard 
 # echo module wireguard +p > /sys/kernel/debug/dynamic_debug/control
 
+apt-get update -y
+apt-get install -y gpg
+
 
 # Add cloudflare gpg key
 curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
