@@ -11,13 +11,19 @@ apt-get install -y g++ clang make binutils autoconf automake \
 
 ### code
 # https://github.com/nghttp2/nghttp2#building-from-git
-git clone https://github.com/nghttp2/nghttp2.git
-cd nghttp2
+# git clone https://github.com/nghttp2/nghttp2.git
+# cd nghttp2
 
 ### build
-git submodule update --init
-autoreconf -i
-automake
-autoconf
+# git submodule update --init
+# autoreconf -i
+# automake
+# autoconf
+# ./configure
+# make
+
+wget -c https://github.com/nghttp2/nghttp2/releases/download/v1.70.0/nghttp2-1.70.0.tar.gz
+tar xzf nghttp2-1.70.0.tar.gz
+cd nghttp2-1.70.0
 ./configure
 make
